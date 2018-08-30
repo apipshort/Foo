@@ -1,4 +1,4 @@
 # Foo
 Initial rep
 
-8-bit bytes
+8-bits bite.
