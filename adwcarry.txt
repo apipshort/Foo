@@ -1,0 +1,75 @@
+======================================================
+================Addition with Carry===================
+===============for the Z80 Processor==================
+==============by John Wyrwas 7/13/00==================
+======================================================
+
+We an perform arithmetic with the ADC instruction on numbers larger than sixteen bits.  ADC is short for "add with carry."  It allows us to perform arithmetic on the computer in rather the same manner that we would perform arithmetic on paper -- by adding together a large number in a sereies of addition operations and passing the "carry" from one operation to the next.
+
+TO produce a total, we would first add together the least significant digits of each number -- that is the digits in the column on the far right of each number.  For example:
+
+	17		17
+	21		21
+	--		--
+	 8		38
+
+Next we add the most significant digits.
+Now suppose we had to add 56 and 38:
+
+	56
+	38
+	--
+	 4
+
+6+8=14 is too large to fit in the single space.  What do we do?  We incorporate the carry into the most significant digit
+
+	1 
+	56
+	38
+	--
+	94
+
+
+The same rules apply for binary numbers.  Suppose:
+
+	 01010101
+	+10110110
+	---------
+	100001011
+
+Notice that the sum of these two eight-bit numbers is, in fact, a nine-bit number.  If we performed this addition in the Z*), the final carry would have overflowed the accumlator, and the most significant binary digit would have been lost.
+It is important to remember that you can never have a carry larger than 1 when adding two numbers.  
+
+An addition operation that produces an answer too large to be held in a neight- or sixteen-bit register, will cause the carry flag to be set.  The ADC instruction will add two eight - or sixteen bit numbers together,along with the contents of the carry flag.  The ADC instruction automatically adds in the carry from the earlier operation.
+
+Suppose, that we wish to add the hex number 5804D6FFh to 2AE8CD3Dh.  Ech of these is thirty- two bits.  Here's a program that stores these numbers in the computer's memory, adds them together, and stores the result.	 	
+-----------------------------------------------
+
+NUM1 EQU (insert a 4 byte memory area here)
+NUM2 EQU (insert a 4 byte memory area here)
+
+
+	LD	HL,5804h 	;1st number, part 1
+	LD	(NUM1),HL	;store it
+	LD	HL,0D6FFh	;1st number, part 2
+	LD	(NUM1+2),HL	;store it
+	LD	HL,2AE8h 	;2ND number, part 1
+	LD	(NUM1),HL	;store it
+	LD	HL,0CD3Dh	;2ND number, part 2
+	LD	(NUM1+2),HL	;store it
+	CALL 	ADDIT
+	RET
+
+;stores the 32 bit result at NUM1
+ADDIT:
+	LD	HL,(NUM1+2)	;get's least significant half
+	LD	DE,(NUM2+2)	
+	ADD	HL,DE
+	LD 	(NUM1+2),HL
+	LD	HL,(NUM1)
+	LD 	DE,(NUM2)
+	ADC	HL,DE
+	LD	(NUM1),HL
+	RET
+
+.end
