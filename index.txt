@@ -1,0 +1,51 @@
+**mod
+**mod2
+**mod3
+
+<HTML>
+<HEAD>
+<TITLE>Les pages de Michel</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/bk12.gif" BGCOLOR="#FFFFFF" text="330099">
+<H1 ALIGN="CENTER">Les pages de Michel</H1>
+<HR WIDTH="75%">
+
+<TABLE BORDER="0" ALIGN="center" CELLPADDING="5">
+<TR>
+<TD><A HREF="index.htm">Accueil</A></TD>
+<TD><A HREF="presentation.htm">Pr&eacute;sentation</A></TD>
+<TD><A HREF="interets.htm">Int&eacute;r&ecirc;ts</A></TD>
+<TD><A HREF="photos.htm">Photos</A></TD>
+<TD><A HREF="liens.htm">Liens</A></TD>
+<TD><A HREF="mailto:competencemicro@infofree.com">E-mail</A></TD>
+</TR>
+</TABLE>
+<HR WIDTH="75%">
+
+<BR>
+<BR>
+
+<P ALIGN="center">
+<IMG SRC="images/chiligauch.gif" WIDTH=45 HEIGHT=32 HSPACE="10"><FONT FACE="Comic Sans MS" COLOR="#006600" SIZE="4">Bienvenue &agrave; ma page d'accueil !</FONT><IMG SRC="images/chilidroit.gif" WIDTH=45 HEIGHT=32 HSPACE="10">
+</P>
+
+<BR>
+<BR>
+
+<P ALIGN="center">
+Je l'ai r&eacute;alis&eacute;e avec Wordpad, en programment manuellement le code HTML.
+<BR>
+<BR>
+<IMG SRC="images/soleil_11.gif" BORDER=0 WIDTH=120 HEIGHT=77 ALIGN=BOTTOM>
+</P>
+
+<HR ALIGN="center" WIDTH="75%">
+<BR>
+
+<P ALIGN="right">
+Amicalement, <BIG>Michel</BIG> - <SMALL>Webmestre</SMALL>
+</P>
+
+</BODY>
+</HTML>
+
